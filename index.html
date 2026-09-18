@@ -239,11 +239,11 @@
             <section id="fun-sec">
                 <h3 style="color: var(--primary); margin-bottom: 40px;">เลือกของขวัญของคุณ! 🎁</h3>
                 <div class="boxes-grid">
-                    <div class="gift-box" onclick="pickBox(this)">🎁</div>
-                    <div class="gift-box" onclick="pickBox(this)">🎁</div>
-                    <div class="gift-box" onclick="pickBox(this)">🎁</div>
-                    <div class="gift-box" onclick="pickBox(this)">🎁</div>
-                    <div class="gift-box" onclick="pickBox(this)">🎁</div>
+                    <div class="gift-box" onclick="pickBox(this, 0)">🎁</div>
+                    <div class="gift-box" onclick="pickBox(this, 1)">🎁</div>
+                    <div class="gift-box" onclick="pickBox(this, 2)">🎁</div>
+                    <div class="gift-box" onclick="pickBox(this, 3)">🎁</div>
+                    <div class="gift-box" onclick="pickBox(this, 4)">🎁</div>
                 </div>
             </section>
 
@@ -268,7 +268,7 @@
                 <div class="ticket">
                     <div class="ticket-header">LOVE COUPON</div>
                     <div class="ticket-content">
-                        <div style="font-size: 0.7rem; color: #999;">ของขวัญก็คือ...</div>
+                        <div style="font-size: 0.7rem; color: #999;">ของขวัญคือ...</div>
                         <div id="coupon-text" class="ticket-prize"></div>
                         <div style="font-size: 0.7rem; color: #999; margin-top: 5px;"></div>
                     </div>
@@ -286,7 +286,7 @@
         const target = "190869"; 
         const errorMsgs = ["รหัสผิดนะเจ้าคนดี 🥺", "จำไม่ได้หรอเนี่ย งอนละนะ! 😤", "เกือบถูกแล้ว ลองอีกนิดดด", "อ๊ะ! ผิดแล้วตัวแสบ 😜"];
 
-        // รายการของขวัญ
+        // รายการของขวัญเรียงตามลำดับทั้ง 5 กล่อง
         const giftList = [
             "ตัวเค้าเอง",
             "ตุ๊กตา",
@@ -400,14 +400,14 @@
             }
         }
 
-        function pickBox(el) {
+        function pickBox(el, index) {
             if(el.innerText === "✨") return;
             el.style.animation = 'none';
             el.offsetHeight; // Reset animation
             el.classList.add('box-selected-shake');
             setTimeout(() => {
-                // สุ่มของขวัญจากรายการที่กำหนด
-                const prize = giftList[Math.floor(Math.random() * giftList.length)]; 
+                // ดึงของขวัญตามลำดับตำแหน่งของกล่องที่กด
+                const prize = giftList[index]; 
                 document.getElementById('photo-area').style.display = 'none';
                 document.getElementById('coupon-area').style.display = 'block';
                 document.getElementById('coupon-text').innerText = prize;
