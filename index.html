@@ -109,7 +109,6 @@
         /* --- Gift Boxes --- */
         .boxes-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 35px; max-width: 300px; margin: 0 auto; }
         
-        /* ปรับอนิเมชันตอนยังไม่กด ให้เด้งแรงขึ้น กระตุ้นให้อยากกด */
         .gift-box { 
             font-size: 65px; 
             cursor: pointer; 
@@ -128,7 +127,6 @@
             80% { transform: translateY(0) scale(1) rotate(0deg); } 
         }
         
-        /* ปรับอนิเมชันสั่นแรงๆ ตอนถูกกดเปิด */
         .box-selected-shake { animation: box-selected-shake 0.8s ease-in-out !important; }
         @keyframes box-selected-shake { 
             0% { transform: scale(1) rotate(0deg); } 
@@ -159,7 +157,6 @@
         nav a { text-decoration: none; font-size: 24px; }
         .btn-close { background: var(--primary); color: white; border: none; padding: 12px 35px; border-radius: 30px; cursor: pointer; margin-top: 25px; font-family: 'Prompt'; font-weight: 600; }
         
-        /* ปรับตำแหน่งเริ่มต้นหัวใจให้เริ่มจากใต้จอ ไม่มากอง */
         .floating-heart { 
             position: absolute; 
             bottom: -30px; 
@@ -175,7 +172,6 @@
             100% { transform: translateY(-105vh) translateX(var(--random-x)) scale(1.5); opacity: 0; } 
         }
 
-        /* สไตล์สำหรับข้อความสีชมพูในจดหมาย */
         .pink-text { color: var(--primary); font-weight: 600; }
     </style>
 </head>
@@ -287,12 +283,12 @@
 
     <script>
         let pass = "";
-        const target = "020869"; 
+        const target = "190869"; 
         const errorMsgs = ["รหัสผิดนะเจ้าคนดี 🥺", "จำไม่ได้หรอเนี่ย งอนละนะ! 😤", "เกือบถูกแล้ว ลองอีกนิดดด", "อ๊ะ! ผิดแล้วตัวแสบ 😜"];
 
         // รายการของขวัญ
         const giftList = [
-            "พวงกุญแจ",
+            "ตัวเค้าเอง",
             "ตุ๊กตา",
             "ดอกไม้",
             "ของกินที่แฟนชอบ",
